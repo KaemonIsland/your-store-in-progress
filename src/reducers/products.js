@@ -1,13 +1,17 @@
-const GET_PRODUCTS = 'GET_PRODUCTS';
+const SET_PRODUCTS = 'GET_PRODUCTS';
 
-export const getProducts = products => ({
-    type: GET_PRODUCTS,
+export const setProducts = products => ({
+    type: SET_PRODUCTS,
     products
 })
 
-const productsReducer = (state = [], action) => {
+const defaultState = {
+    products: []
+}
+
+const productsReducer = (state = defaultState, action) => {
     switch(action.type) {
-        case GET_PRODUCTS:
+        case SET_PRODUCTS:
             return { ...state, products: [...action.products] }
         default:
             return state;
