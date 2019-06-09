@@ -1,9 +1,10 @@
 import React from 'react'
+import ProductSearch from '../util/ProductSearch'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-        <Link className="navbar-brand" href="#">Your Store in Progress</Link>
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <Link to="/" className="navbar-brand">Your Store in Progress</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -11,7 +12,10 @@ const NavBar = () => (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Cart</a>
+                <Link to="/products" className="nav-link">Products</Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/cart" className="nav-link">Cart</Link>
                 </li>
                 <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,10 +29,7 @@ const NavBar = () => (
                     </div>
                 </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-                <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <ProductSearch />
         </div>
     </nav>
 )
