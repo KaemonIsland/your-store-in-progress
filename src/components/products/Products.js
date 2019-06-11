@@ -10,11 +10,12 @@ const ProductsContainer = styled.div`
     margin-top: 5rem;
     margin-bottom: 2rem;
     display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-    grid-auto-rows: 10rem;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+    grid-auto-rows: 14rem;
     justify-items: center;
     align-content: center;
+    justify-content: space-evenly;
 `
 
 const Products = ({ products, dispatch }) => {
