@@ -79,7 +79,7 @@ export const fakeProducts = [
         id: 7
     },
     { 
-        name: 'Marvel Shirt', 
+        name: 'Soup Shirt', 
         description: "Franzen pinterest gastropub mustache tbh subway tile ethical shabby chic man braid bitters. Ethical chambray beard humblebrag slow-carb gentrify. Readymade enamel pin beard sriracha, lomo celiac plaid hot chicken af everyday carry palo santo. Neutra letterpress cold-pressed readymade authentic artisan, drinking vinegar master cleanse craft beer raclette vape keytar viral pug. Bushwick hoodie cliche actually tbh everyday carry biodiesel.", 
         rating: 1.5, 
         img: soupshirt, 

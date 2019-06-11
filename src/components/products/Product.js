@@ -17,18 +17,14 @@ const ProductContainer = styled.div`
 
 
 
-const Product = ({name, id, description, img, price, rating, seller}) => {
+const Product = ({img, rating, ...rest}) => {
     return (
         <ProductContainer>
             <ProductImage img={img} />
             <p>Rating: {rating} Stars</p>
-            <ProductModel 
-                id={id}
-                name={name}
-                description={description}
+            <ProductModel
                 img={img}
-                price={price}
-                seller={seller}
+                {...rest}
             />
         </ProductContainer>
     )
