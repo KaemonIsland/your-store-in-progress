@@ -66,10 +66,10 @@ const ModalContent = styled.div`
 
 
 
-const Product = ({name, id, description, img, lazyImage, price, rating, seller}) => {
+const Product = ({name, id, description, img, price, rating, seller}) => {
     return (
         <ProductContainer>
-            <ProductImage />
+            <ProductImage img={img} />
             <p>Rating: {rating} Stars</p>
             <Input type="checkbox" id={id} />
             <label className="button" htmlFor={id} >
