@@ -2,28 +2,33 @@ const ADD_PRODUCT = 'ADD_PRODUCT'
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 const UPDATE_QUANTITY = 'UPDATE_QUANTITY'
 
-const addProduct = product => {
+export const addProduct = product => {
     return {
         type: ADD_PRODUCT,
         product
     }
 }
 
-const removeProduct = productId => {
+export const removeProduct = productId => {
     return {
         type: REMOVE_PRODUCT,
         productId
     }
 }
 
-const updateQuantity = amount => {
+export const updateQuantity = amount => {
     return {
         type: UPDATE_QUANTITY,
         amount
     }
 }
 
-const cartReducer = (state = [], action) => {
+const defaultState = {
+    products: [],
+    cart: []
+}
+
+const cartReducer = (state = defaultState, action) => {
     switch(action.type) {
         case ADD_PRODUCT:
             return {...state, cart: [...state.cart, action.product] }

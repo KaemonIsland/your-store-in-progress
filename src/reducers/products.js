@@ -6,7 +6,8 @@ export const setProducts = products => ({
 })
 
 const defaultState = {
-    products: []
+    products: [],
+    cart: []
 }
 
 const productsReducer = (state = defaultState, action) => {

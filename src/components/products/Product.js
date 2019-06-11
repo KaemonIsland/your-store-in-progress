@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ProductImage from './ProductImage'
-import ProductModel from './ProductModel';
+import ProductModel from './ProductModel'
 
 const ProductContainer = styled.div`
     border: 1px solid black;
@@ -17,11 +17,13 @@ const ProductContainer = styled.div`
 
 
 
-const Product = ({img, rating, ...rest}) => {
+const Product = ({img, rating, addToCart, ...rest}) => {
+
     return (
         <ProductContainer>
             <ProductImage img={img} />
             <p>Rating: {rating} Stars</p>
+            <button onClick={addToCart}>Add to Cart</button>
             <ProductModel
                 img={img}
                 {...rest}

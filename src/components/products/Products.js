@@ -4,6 +4,7 @@ import Product from './Product'
 //Redux data/actions
 import { connect } from 'react-redux'
 import { setProducts } from '../../reducers/products'
+import { addProduct } from '../../reducers/cart'
 import { fakeProducts } from '../assets/fakeProducts'
 
 const ProductsContainer = styled.div`
@@ -18,7 +19,15 @@ const ProductsContainer = styled.div`
     justify-content: space-evenly;
 `
 
-const Products = ({ products, dispatch }) => {
+const Products = ({ cart, products, dispatch }) => {
+
+    const addProductToCart = newProduct => {
+        const cartIds = cart.map(product => product.id)
+        
+        if (cartIds.every(value => value !== newProduct.id)) {
+            dispatch(addProduct(newProduct))
+        }
+    }
 
     useEffect(() => {
     //Fake axios call to server
@@ -32,6 +41,7 @@ const Products = ({ products, dispatch }) => {
                     <Product
                         key={i}
                         {...product}
+                        addToCart={() => addProductToCart(product)}
                     />
                  )) :
                 <h1>Loading</h1>
@@ -42,8 +52,10 @@ const Products = ({ products, dispatch }) => {
 
 const mapStateToProps = state => {
     const { products } = state.productsReducer;
+    const { cart } = state.cartReducer;
     return {
-        products: products
+        products,
+        cart
     }
 }
 
