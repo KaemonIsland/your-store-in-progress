@@ -77,8 +77,10 @@ const Product = ({name, id, description, img, price, rating, seller}) => {
             </label>
             <Modal>
                 <ModalContent>
-                    <h3>{name}</h3>
+                    <ProductImage img={img} />
+                    <h3><strong>{name}</strong> - ${price}</h3>
                     <p>{description}</p>
+                    <p>Sold by: <em>{seller}</em></p>
                     <label htmlFor={id} className="button" >
                         <a>Close</a>
                     </label>
