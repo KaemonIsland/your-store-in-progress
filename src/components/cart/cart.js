@@ -1,11 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
+
+const CartContainer = styled.div`
+    margin-top: 5rem;
+`
 
 const Cart = ({cart, dispatch}) => {
 
-    console.log(cart)
     return (
-        <h1>Cart:</h1>
+        <CartContainer>
+            <h1>In Your Cart:</h1>
+            {
+                cart.map(product => {
+                    return (
+                        <div>{product.name}</div>
+                    )
+                })
+            }
+        </CartContainer>
     )
 }
 
