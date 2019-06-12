@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const ImageContainer = styled.div`
     width: 100%;
+    border: 1px solid black;
 `
 
 const ProductImage = ({img}) => {

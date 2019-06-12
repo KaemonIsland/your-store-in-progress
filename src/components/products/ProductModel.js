@@ -48,7 +48,7 @@ const Modal = styled.div`
 
 const ModalContent = styled.div`
     display: block;
-    padding: 3rem;
+    padding: 2rem;
     background: white;
 `
 

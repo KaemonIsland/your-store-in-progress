@@ -4,7 +4,7 @@ import ProductImage from './ProductImage'
 import ProductModel from './ProductModel'
 
 const ProductContainer = styled.div`
-    border: 1px solid black;
+    border: 2px solid black;
     width: 100%;
     height: 100%;
     display: flex;
@@ -15,19 +15,37 @@ const ProductContainer = styled.div`
     box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .5);
 `
 
+const ProductButton = styled.button`
+    width: 100%;
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    transition: all 300ms ease-in;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+`
+
 
 
 const Product = ({img, rating, addToCart, ...rest}) => {
 
     return (
-        <ProductContainer>
+        <ProductContainer className='container' >
             <ProductImage img={img} />
-            <p>Rating: {rating} Stars</p>
-            <button onClick={addToCart}>Add to Cart</button>
+            <div>Rating: {rating} Stars</div>
             <ProductModel
                 img={img}
                 {...rest}
             />
+            <ProductButton onClick={addToCart}>Add to Cart</ProductButton>
         </ProductContainer>
     )
 }
