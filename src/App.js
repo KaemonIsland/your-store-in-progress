@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 const NavBar = lazy(() => import('./components/layout/NavBar'))
 const Home = lazy(() =>  import('./components/pages/Home'))
 const Products = lazy(() => import('./components/products/Products'))
-const Cart = lazy(() => import('./components/cart/cart'))
+const Cart = lazy(() => import('./components/cart/Cart'))
 
 function App() {
   return (

@@ -5,15 +5,10 @@ export const setProducts = products => ({
     products
 })
 
-const defaultState = {
-    products: [],
-    cart: []
-}
-
-const productsReducer = (state = defaultState, action) => {
+const productsReducer = (state = [], action) => {
     switch(action.type) {
         case SET_PRODUCTS:
-            return { ...state, products: [...action.products] }
+            return [...action.products]
         default:
             return state;
     }

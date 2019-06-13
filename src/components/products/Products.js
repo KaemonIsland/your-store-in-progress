@@ -62,8 +62,8 @@ const Products = ({ cart, products, dispatch }) => {
 }
 
 const mapStateToProps = state => {
-    const { products } = state.productsReducer;
-    const { cart } = state.cartReducer;
+    const products = state.productsReducer;
+    const cart = state.cartReducer;
     return {
         products,
         cart

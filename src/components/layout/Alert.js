@@ -6,7 +6,7 @@ const Alert = ({type, message}) => {
     if (type && message) {
         alert = (
             <div className="container">
-                <div class={`alert alert-${type}`} role="alert">
+                <div className={`alert alert-${type}`} role="alert">
                     {message}
                 </div>
             </div>

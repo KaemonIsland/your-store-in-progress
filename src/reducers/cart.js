@@ -23,19 +23,15 @@ export const updateQuantity = amount => {
     }
 }
 
-const defaultState = {
-    products: [],
-    cart: []
-}
 
-const cartReducer = (state = defaultState, action) => {
+const cartReducer = (state = [], action) => {
     switch(action.type) {
         case ADD_PRODUCT:
-            return {...state, cart: [...state.cart, action.product] }
+            return [...state, action.product]
         case REMOVE_PRODUCT:
-            return {...state, cart: [state.cart.filter(product => product.id !== action.productId)]}
+            return [state.filter(product => product.id !== action.productId)]
         default:
-            return {...state}
+            return [...state]
     }
 }
 
