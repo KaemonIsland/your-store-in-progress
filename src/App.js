@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
+import NavBar from './components/layout/NavBar'
 
-const NavBar = lazy(() => import('./components/layout/NavBar'))
 const Home = lazy(() =>  import('./components/pages/Home'))
 const Products = lazy(() => import('./components/products/Products'))
 const Cart = lazy(() => import('./components/cart/Cart'))
@@ -10,8 +10,8 @@ const Cart = lazy(() => import('./components/cart/Cart'))
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Suspense fallback={<h1>Loading...</h1>} >
-        <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/products' component={Products} />
