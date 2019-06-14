@@ -12,6 +12,7 @@ const filters = [
 ]
 
 const ProductFilterContainer = styled.div`
+    padding-top: 1rem;
     text-align: center;
     display: flex;
     justify-content: space-evenly;
@@ -25,7 +26,8 @@ const ProductFilterContainer = styled.div`
 
 const ProductFilter = ({ dispatch, match }) => {
     
-    dispatch(setFilter(match.params.filter))
+    dispatch(setFilter(match.params.filter || 'all'))
+    
 
     return (
         <ProductFilterContainer>
@@ -37,8 +39,10 @@ const ProductFilter = ({ dispatch, match }) => {
                             <NavLink
                                 to={`/products/${filter}`}
                                 activeStyle={{
-                                    color: 'red',
-                                    fontWeight: 'bold'
+                                    padding: '0 2rem',
+                                    border: '1px solid black',
+                                    borderRadius: '1rem',
+                                    color: 'black'
                                 }}
                             >{filter}</NavLink>
                             {' | '}

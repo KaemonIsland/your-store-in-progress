@@ -26,6 +26,11 @@ function App() {
           />
           <Route 
             exact 
+            path='/products' 
+            render={props => <Products {...props} />} 
+          />
+          <Route 
+            exact 
             path="/cart" 
             component={Cart} 
           />
