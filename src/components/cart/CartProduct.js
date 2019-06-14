@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductImage from '../products/ProductImage'
 import styled from 'styled-components'
+import { Button } from '../styled-components/base'
 
 const CartProductContainer = styled.div`
     text-align: center;
@@ -17,22 +18,6 @@ const ImageContainer = styled.div`
     width: 13rem;
 `
 
-const RemoveButton = styled.button`
-    outline: none;
-    color: black;
-    background-color: white;
-    border: 1px solid black;
-    font-weight: bold;
-    border-radius: 1rem;
-    transition: all 200ms ease-in;
-
-    :hover {
-        outline: none;
-        color: white;
-        background-color: black;
-    }
-`
-
 const CartProduct = ({name, category, id, img, price, seller, remove}) => {
     
     return (
@@ -46,7 +31,7 @@ const CartProduct = ({name, category, id, img, price, seller, remove}) => {
             </div>
             <div>
                 <div>${price}</div>
-                <RemoveButton onClick={remove}>Remove</RemoveButton>
+                <Button onClick={remove}>Remove</Button>
             </div>
         </CartProductContainer>
     )

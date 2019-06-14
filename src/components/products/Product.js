@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ProductImage from './ProductImage'
 import ProductModel from './ProductModel'
+import { Button } from '../styled-components/base'
 
 const ProductContainer = styled.div`
     border: 2px solid black;
@@ -13,24 +14,6 @@ const ProductContainer = styled.div`
     padding: .5rem;
     border-radius: .5rem;
     box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .5);
-`
-
-const ProductButton = styled.button`
-    width: 100%;
-    border-radius: 1rem;
-    background-color: white;
-    border: 1px solid black;
-    transition: all 300ms ease-in;
-    outline: none;
-
-    &:focus {
-        outline: none;
-    }
-
-    &:hover {
-        background-color: black;
-        color: white;
-    }
 `
 
 
@@ -45,7 +28,7 @@ const Product = ({img, rating, addToCart, ...rest}) => {
                 img={img}
                 {...rest}
             />
-            <ProductButton onClick={addToCart}>Add to Cart</ProductButton>
+            <Button onClick={addToCart}>Add to Cart</Button>
         </ProductContainer>
     )
 }

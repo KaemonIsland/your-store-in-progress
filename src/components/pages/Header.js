@@ -1,9 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
 import video from '../assets/videos/Berlin-Train.mp4'
+import { Button } from '../styled-components/base'
 
 const HeaderContainer = styled.header`
     position: relative;
+`
+
+const HeaderMain = styled.div`
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .8);
+    width: 60%;
+    box-shadow: 0 .5rem .8rem black;
+    border-radius: 1rem;
+    padding: .5rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 200%);
 `
 
 const BackgroundVideo = styled.div`
@@ -26,6 +41,9 @@ const Video = styled.video`
 const Header = () => {
     return (
         <HeaderContainer>
+            <HeaderMain>Your Store In Progress</HeaderMain>
+            <Button>Register or Login</Button>
+            <Button>Start Shopping</Button>
             <BackgroundVideo>
                 <Video autoPlay muted loop >
                     <source src={video} type="video/mp4"/>
