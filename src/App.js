@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import NavBar from './components/layout/NavBar'
 
 const Home = lazy(() =>  import('./components/pages/Home'))
+const Header = lazy(() => import('./components/pages/Header'))
 const Products = lazy(() => import('./components/products/Products'))
 const Cart = lazy(() => import('./components/cart/Cart'))
 
@@ -13,7 +14,7 @@ function App() {
       <NavBar />
       <Suspense fallback={<h1>Loading...</h1>} >
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Header} />
           <Route exact path='/products' component={Products} />
           <Route exact path="/cart" component={Cart} />
         </Switch>
