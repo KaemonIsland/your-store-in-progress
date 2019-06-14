@@ -14,7 +14,7 @@ const HeaderMain = styled.div`
     font-weight: bold;
     text-align: center;
     background-color: rgba(255, 255, 255, .8);
-    width: 60%;
+    width: 40rem;
     box-shadow: 0 .5rem .8rem black;
     border-radius: 1rem;
     padding: .5rem;
@@ -22,6 +22,10 @@ const HeaderMain = styled.div`
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 769px) {
+        width: 90%;
+    }
 `
 
 const HeaderLink = styled.div`
@@ -32,7 +36,7 @@ const HeaderLink = styled.div`
     transform: translate(-50%, -50%);
     padding: 1rem;
     background-color: rgba(255, 255, 255, .8);
-    width: 40%;
+    width: 30rem;
     box-shadow: 0 .5rem .8rem black;
     border-radius: 1rem;
     display: flex;
@@ -45,6 +49,10 @@ const HeaderLink = styled.div`
         color: black;
     }
 
+    @media (max-width: 769px) {
+        width: 50%;
+    }
+
 `
 
 const BackgroundVideo = styled.div`
@@ -54,7 +62,7 @@ const BackgroundVideo = styled.div`
     height: 100vh;
     width: 100%;
     z-index: -1;
-    opacity: .10;
+    opacity: .3;
     overflow: hidden;
 `
 
