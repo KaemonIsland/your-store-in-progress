@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Product from './Product'
 import Alert from '../layout/Alert';
+import ProductFilter from './ProductFilter'
 //Redux data/actions
 import { connect } from 'react-redux'
 import { setProducts } from '../../reducers/products'
@@ -21,8 +22,7 @@ const ProductsContainer = styled.div`
     justify-content: space-evenly;
 `
 
-const Products = ({ cart, products, dispatch }) => {
-
+const Products = ({ match, cart, products, dispatch }) => {
     const [alert, setAlert] = useState({});
 
     const addProductToCart = newProduct => {
@@ -43,7 +43,7 @@ const Products = ({ cart, products, dispatch }) => {
 
     return (
         <>
-        <h1>Showing all products</h1>
+        <ProductFilter match={match} />
         { alert ? <Alert {...alert} /> : null }
         <ProductsContainer className="container">
             {  products.length !== 0 ?
@@ -62,10 +62,18 @@ const Products = ({ cart, products, dispatch }) => {
 }
 
 const mapStateToProps = state => {
-    const products = state.productsReducer;
+    const { products, filter } = state.productsReducer;
     const cart = state.cartReducer;
     return {
-        products,
+        products: products.filter(product => {
+            if (filter === 'all') {
+                return true;
+            } else if (product.category === filter) {
+                return true;
+            } else {
+                return false;
+            }
+        }),
         cart
     }
 }

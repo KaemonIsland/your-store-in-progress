@@ -14,9 +14,21 @@ function App() {
       <NavBar />
       <Suspense fallback={<h1>Loading...</h1>} >
         <Switch>
-          <Route exact path='/' component={Header} />
-          <Route exact path='/products' component={Products} />
-          <Route exact path="/cart" component={Cart} />
+          <Route 
+            exact 
+            path='/' 
+            component={Header} 
+          />
+          <Route 
+            exact 
+            path='/products/:filter' 
+            render={props => <Products {...props} />} 
+          />
+          <Route 
+            exact 
+            path="/cart" 
+            component={Cart} 
+          />
         </Switch>
       </Suspense>
     </div>

@@ -14,7 +14,7 @@ export const fakeProducts = [
         rating: 3.5, 
         img: tshirts, 
         seller: 'Your Shirts in Progress',
-        category: 'shirt',
+        category: 'clothing',
         price: 23, 
         id: 1
     },
@@ -24,7 +24,7 @@ export const fakeProducts = [
         rating: 4, 
         img: skeleton,
         seller: 'Your Shirts in Progress',
-        category: 'shirt',
+        category: 'clothing',
         price: 60, 
         id: 2
     },
@@ -44,7 +44,7 @@ export const fakeProducts = [
         rating: 3, 
         img: longsleeve,
         seller: 'Your Shirts in Progress',
-        category: 'shirt',
+        category: 'clothing',
         price: 25, 
         id: 4
     },
@@ -54,7 +54,7 @@ export const fakeProducts = [
         rating: 3.5, 
         img: shoes, 
         seller: 'Your Shoes in Progress',
-        category: 'accessories',
+        category: 'shoes',
         price: 40, 
         id: 5
     },
@@ -64,7 +64,7 @@ export const fakeProducts = [
         rating: 5, 
         img: dress, 
         seller: 'Your Dress in Progress',
-        category: 'dress',
+        category: 'clothing',
         price: 60, 
         id: 6
     },
@@ -84,7 +84,7 @@ export const fakeProducts = [
         rating: 1.5, 
         img: soupshirt, 
         seller: 'Your Shirts in Progress', 
-        category: 'shirt',
+        category: 'clothing',
         price: 23, 
         id: 8
     },
