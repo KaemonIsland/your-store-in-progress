@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import video from '../assets/videos/Berlin-Train.mp4'
-import { Button } from '../styled-components/base'
+import { Link } from 'react-router-dom'
 
 const HeaderContainer = styled.header`
     position: relative;
+    height: 100vh;
+    width: 100%;
 `
 
 const HeaderMain = styled.div`
@@ -18,7 +20,31 @@ const HeaderMain = styled.div`
     padding: .5rem;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 200%);
+    top: 30%;
+    transform: translate(-50%, -50%);
+`
+
+const HeaderLink = styled.div`
+    position: relative;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, .8);
+    width: 40%;
+    box-shadow: 0 .5rem .8rem black;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all 200ms ease-out;
+    
+    & a {
+        color: black;
+    }
+
 `
 
 const BackgroundVideo = styled.div`
@@ -42,8 +68,9 @@ const Header = () => {
     return (
         <HeaderContainer>
             <HeaderMain>Your Store In Progress</HeaderMain>
-            <Button>Register or Login</Button>
-            <Button>Start Shopping</Button>
+            <HeaderLink>
+                <Link to="/products">Start Shopping!</Link>
+            </HeaderLink>
             <BackgroundVideo>
                 <Video autoPlay muted loop >
                     <source src={video} type="video/mp4"/>
