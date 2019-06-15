@@ -24,9 +24,13 @@ const ProductsContainer = styled.div`
 
 const Products = ({ match, cart, products, dispatch }) => {
     const [alert, setAlert] = useState({});
+    const [showAlert, setShowAlert] = useState(false);
+
+    const toggleAlert = () => setShowAlert(false);
 
     const addProductToCart = newProduct => {
         const cartIds = cart.map(product => product.id)
+        setShowAlert(true);
         
         if (cartIds.every(value => value !== newProduct.id)) {
             setAlert({message: `${newProduct.name} has been added to your cart!`, type: 'success'})
@@ -43,8 +47,8 @@ const Products = ({ match, cart, products, dispatch }) => {
 
     return (
         <>
+        { showAlert ? <Alert {...alert} toggleAlert={toggleAlert} /> : null }
         <ProductFilter match={match} />
-        { alert ? <Alert {...alert} /> : null }
         <ProductsContainer className="container">
             {  products.length !== 0 ?
                 products.map( (product, i) => (
