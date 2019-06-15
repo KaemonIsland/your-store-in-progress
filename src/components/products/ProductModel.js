@@ -32,7 +32,9 @@ const Modal = styled.div`
     left: 50%;
     z-index: 100;
     transform: translate(-50%, -50%) scale(0.5);
-    width: 100%;
+    width: 80%;
+    height: 80vh;
+    overflow-y: scroll;
     max-width: 640px;
     pointer-events: none;
     opacity: 0;
