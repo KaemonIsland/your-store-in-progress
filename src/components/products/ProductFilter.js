@@ -39,10 +39,7 @@ const ProductFilter = ({ dispatch, match }) => {
                             <NavLink
                                 to={`/products/${filter}`}
                                 activeStyle={{
-                                    padding: '0 2rem',
-                                    border: '1px solid black',
-                                    borderRadius: '1rem',
-                                    color: 'black'
+                                    color: 'red'
                                 }}
                             >{filter}</NavLink>
                             {' | '}
