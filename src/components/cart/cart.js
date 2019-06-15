@@ -4,9 +4,17 @@ import styled from 'styled-components'
 import CartProduct from './CartProduct'
 import { removeProduct } from '../../reducers/cart'
 import { Link } from 'react-router-dom'
+import { Button } from '../styled-components/base'
+import { removeAll } from '../../reducers/cart'
 
 const CartContainer = styled.div`
     margin-top: 2rem;
+    margin-bottom: 2rem;
+`
+
+const PurchaseButton = styled(Button)`
+    font-size: 1.5rem;
+    padding: .5rem;
 `
 
 const Cart = ({cart, dispatch}) => {
@@ -27,8 +35,9 @@ const Cart = ({cart, dispatch}) => {
                 ) : 
                 (
                     <>
-                        <h3>Total: ${getTotalPrice(cart)}</h3>
+                        <h3>Total: ${getTotalPrice(cart)} + Shipping</h3>
                         <h1>Your Cart:</h1>
+                        <Button onClick={() => dispatch(removeAll())}>Remove all items</Button>
                     </>
                 )
             }
@@ -41,6 +50,7 @@ const Cart = ({cart, dispatch}) => {
                     />
                 ))
             }
+            { cart.length >= 1 ? <PurchaseButton>Proceed to Purchase</PurchaseButton> : null }
         </CartContainer>
     )
 }

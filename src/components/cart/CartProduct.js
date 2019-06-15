@@ -18,7 +18,7 @@ const ImageContainer = styled.div`
     width: 13rem;
 `
 
-const CartProduct = ({name, category, id, img, price, seller, remove}) => {
+const CartProduct = ({name, img, price, seller, remove}) => {
     
     return (
         <CartProductContainer>

@@ -1,6 +1,7 @@
 const ADD_PRODUCT = 'ADD_PRODUCT'
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
 const UPDATE_QUANTITY = 'UPDATE_QUANTITY'
+const REMOVE_ALL = 'REMOVE_ALL'
 
 export const addProduct = product => {
     return {
@@ -23,6 +24,8 @@ export const updateQuantity = amount => {
     }
 }
 
+export const removeAll = () => ({type: REMOVE_ALL})
+
 
 const cartReducer = (state = [], action) => {
     switch(action.type) {
@@ -30,6 +33,8 @@ const cartReducer = (state = [], action) => {
             return [...state, action.product]
         case REMOVE_PRODUCT:
             return state.filter(product => product.id !== action.productId)
+        case REMOVE_ALL:
+            return []
         default:
             return [...state]
     }
