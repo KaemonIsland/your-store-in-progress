@@ -26,7 +26,7 @@ const CartProduct = ({name, category, id, img, price, seller, remove}) => {
                 <ProductImage img={img} />
             </ImageContainer>
             <div>
-                <h1>{name}</h1>
+                <h3>{name}</h3>
                 <p>Sold by: <em>{seller}</em></p>
             </div>
             <div>
