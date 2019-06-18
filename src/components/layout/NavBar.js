@@ -21,6 +21,12 @@ const NavBar = ({cart}) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
+                <Link to="/register" className="nav-link">Register</Link>
+                </li>
+                <li className="nav-item">
+                <Link to="/login" className="nav-link">Login</Link>
+                </li>
+                <li className="nav-item">
                 <Link to="/products/all" className="nav-link">Products</Link>
                 </li>
                 <li className="nav-item">
