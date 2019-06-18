@@ -33,8 +33,7 @@ const Modal = styled.div`
     z-index: 100;
     transform: translate(-50%, -50%) scale(0.5);
     width: 80%;
-    height: 80vh;
-    overflow-y: scroll;
+    height: 80%;
     max-width: 640px;
     pointer-events: none;
     opacity: 0;
@@ -74,7 +73,10 @@ const ProductModel = ({id, img, name, price, description, seller}) => {
                 <ModalContent>
                     <ProductImage img={img} />
                     <h3><strong>{name}</strong> - ${price}</h3>
-                    <p>{description}</p>
+                    <p style={{
+                        overflowY: 'scroll',
+                        height: '5rem'
+                    }}>{description}</p>
                     <p>Sold by: <em>{seller}</em></p>
                     <Label htmlFor={id}>
                         <a><strong>Close</strong></a>
