@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import NavBar from './components/layout/NavBar'
 
-const Home = lazy(() =>  import('./components/pages/Home'))
+const NotFound = lazy(() =>  import('./components/pages/NotFound'))
 const Header = lazy(() => import('./components/pages/Header'))
 const Products = lazy(() => import('./components/products/Products'))
 const Cart = lazy(() => import('./components/cart/Cart'))
@@ -46,6 +46,9 @@ function App() {
             path="/login"
             component={Login}
             />
+          <Route
+            component={NotFound}
+          />
         </Switch>
       </Suspense>
     </div>
