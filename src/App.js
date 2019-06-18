@@ -7,6 +7,8 @@ const Home = lazy(() =>  import('./components/pages/Home'))
 const Header = lazy(() => import('./components/pages/Header'))
 const Products = lazy(() => import('./components/products/Products'))
 const Cart = lazy(() => import('./components/cart/Cart'))
+const Register = lazy(() => import('./components/auth/Registration'))
+const Login = lazy(() => import('./components/auth/Login'))
 
 function App() {
   return (
@@ -34,6 +36,16 @@ function App() {
             path="/cart" 
             component={Cart} 
           />
+          <Route
+            exact
+            path="/register"
+            component={Register}
+            />
+          <Route
+            exact
+            path="/login"
+            component={Login}
+            />
         </Switch>
       </Suspense>
     </div>
