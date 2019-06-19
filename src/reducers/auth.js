@@ -23,14 +23,14 @@ export const defaultUser = {
     loggedIn: false
 }
 
-const authReducer = (state = {}, action) => {
+const authReducer = (state = defaultUser, action) => {
     switch(action.type) {
         case LOGIN:
-            return {...state, loggedIn: true, ...action.user};
+            return { loggedIn: true, user: {...action.user } };
         case REGISTER:
-            return { ...state, loggedIn: true, ...action.user};
+            return { loggedIn: true, user: {...action.user} };
         case LOGOUT:
-            return defaultUser
+            return { loggedIn: false, user: {} }
         default:
             return {...state};
     }
