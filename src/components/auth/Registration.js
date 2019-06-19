@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const Registration = () => {
+    const handleChange = e => {
+
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+    }
     return (
         <div>
             <h1>Register new User</h1>
