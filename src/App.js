@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import NavBar from './components/layout/NavBar'
+import Footer from './components/pages/Footer'
 
 const NotFound = lazy(() =>  import('./components/pages/NotFound'))
 const Header = lazy(() => import('./components/pages/Header'))
@@ -51,6 +52,7 @@ function App() {
           />
         </Switch>
       </Suspense>
+      <Footer />
     </div>
   );
 }

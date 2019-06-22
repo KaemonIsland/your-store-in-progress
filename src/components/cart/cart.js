@@ -9,7 +9,7 @@ import { removeAll } from '../../reducers/cart'
 
 const CartContainer = styled.div`
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;p
 `
 
 const PurchaseButton = styled(Button)`
