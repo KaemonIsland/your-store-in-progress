@@ -10,6 +10,7 @@ const FooterContainer = styled.footer`
     grid-template-rows: 35% 50% 15%;
     height: 20rem;
     text-align: center;
+    border-top: 1px solid black;
 `
 
 const FooterButton = styled(Button)`
