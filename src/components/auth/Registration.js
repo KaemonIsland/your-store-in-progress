@@ -24,7 +24,7 @@ const Registration = ({dispatch, history}) => {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Name:</label>
-                    <input required className="form-control" value={value} onChange={handleChange} />
+                    <input required className="form-control" value={value} onChange={handleChange} name='name' />
                 </div>
                 <button className="btn btn-primary" type='submit'>Register</button>
             </form>
