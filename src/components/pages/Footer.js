@@ -34,14 +34,13 @@ const FooterCompany = styled.div`
     background-color: black;
     color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
     align-items: center;
 `
 const FooterCompanyLang = styled.div`
     display: flex;
     justify-content: space-evenly;
-    width: 30%;
 `
 
 
@@ -75,9 +74,9 @@ const Footer = () => {
             <FooterCompany>
                 <FooterCompanyLang>
                     <div>United States</div>
-                    {' | '}
+                    {' - '}
                     <div>English(US)</div>
-                    {' | '}
+                    {' - '}
                     <div>$(USD)</div>
                 </FooterCompanyLang>
                 <FooterCompanyLang>
