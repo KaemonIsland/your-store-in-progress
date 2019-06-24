@@ -20,6 +20,14 @@ const ProductsContainer = styled.div`
     justify-items: center;
     align-content: center;
     justify-content: space-evenly;
+
+    @media(max-width: 576px) {
+        grid-auto-rows: 16.5rem;
+    }
+
+    @media(max-width: 389px) {
+        grid-auto-rows: 20rem;
+    }
 `
 
 const Products = ({ match, cart, products, dispatch }) => {

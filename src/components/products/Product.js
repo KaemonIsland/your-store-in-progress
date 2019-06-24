@@ -14,6 +14,11 @@ const ProductContainer = styled.div`
     padding: .5rem;
     border-radius: .5rem;
     box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .5);
+
+    @media(max-width: 389px) {
+        height: 20rem;
+        width: 80%;
+    }
 `
 
 
